@@ -23,8 +23,8 @@ class Init
 
         wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap', null, null);
         wp_enqueue_script('jquery', null, null, null, true);
-        wp_enqueue_style('timberpress-styles', timberpress_asset('style-index.css'), null, null);
-        wp_enqueue_script('timberpress-scripts', timberpress_asset('index.js'), array('jquery'), $theme->get('Version'), false);
+        wp_enqueue_style('timberpress-styles', $this->timberpress_asset('style-index.css'), null, null);
+        wp_enqueue_script('timberpress-scripts', $this->timberpress_asset('index.js'), array('jquery'), $theme->get('Version'), false);
         wp_localize_script('timberpress-scripts', 'timberpressAjax', array('ajaxurl' => admin_url('admin-ajax.php'), 'nonce' => wp_create_nonce('ajax-nonce')));
     }
 
